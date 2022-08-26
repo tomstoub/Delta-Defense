@@ -1,0 +1,378 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+  }
+  /* all header styles */
+  .header {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 8%;
+    background: #121212;
+    z-index: 2; /*set to remain on top when scrolling */
+  }
+  .uscca-logo {
+    padding: 10px 15% 0;
+    margin-bottom: 10px;  
+    opacity: 1;
+    z-index: 2; 
+  }
+  .deltadefense-logo {
+    padding: 20px;
+    overflow: hidden;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+  .deltadefense-logo p{
+    margin: 2px 0 0 0;
+    padding: 10px 5px;
+    color: #CBCED1;
+    float: left;
+    font-size: 10px;
+  }
+  .deltadefense-logo img {
+    margin-right: 15px;
+    float: right;
+  }
+
+  .header2 {
+    height: 30px;
+    background: #fff;
+    z-index: 3;
+  }
+  .header2 p {
+    margin: 5px;
+    padding: 2px;
+    float: right;
+    max-height: 40px;
+    color: #717171;
+  }
+  .phone-number {
+    color: #444546; /* hex color wasn't included in XD file so I grabbed it using eye dropper from screenshot */
+    font-weight: bold;
+  }
+  .content {
+    padding: 16px;
+  }  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .sticky + .content {
+    padding-top: 102px;
+  }
+  .banner {
+    max-width: 100%;
+    height: 600px;
+    background: #121212;
+    z-index: 0;
+    position: relative;
+  }
+
+  .banner-icon {
+    position: absolute;
+    left: 30%;
+    top: 25%;
+    margin: 5px auto;
+  }
+
+  .banner-community {
+    position: absolute;
+    left: 55%;
+    top: 55%;
+    margin: 5px auto;
+  }
+
+  /* may have been easier to just make an image, but this works just fine */
+  .banner-4 {
+    position: absolute;
+    background: #0074E0;
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+    color: #fff;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px;
+    right: 40%;
+    top: 25%;
+    z-index: 1;
+    margin: 5px auto;
+  }
+  /* line coming out from "4" graphic */
+  .banner-4::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 2px;
+    top: calc(50% - 1px);
+    left: 100px;
+    background: #707070;
+  }
+
+  .bullets {
+    position: relative;
+    width: 100%;
+    max-width: 1540px;
+    margin: -90px auto;
+    padding: 15px 0;
+  }
+
+  .bullets::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #B88E33;
+    background-image: linear-gradient(transparent 50%, rgb(255, 255, 255) 50%); /* gradient set to alternate colors to get dashed line effect */
+    background-size: 7px 7px;
+    top: 11.5%;
+    bottom: 12.5%;
+    left: 50%;
+    margin-left: -1px;
+  }
+
+  .container {
+    padding: 15px 75px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+  }
+
+  .container.left {
+    left: 0;
+  }
+
+  .container.right {
+    left: 50%;
+  }
+
+  .container.right::after {
+    left: -8px;
+  }
+  /* below is for horizontal dashed lines */
+  .container::before { 
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    top: calc(50% - 1px);
+    right: 3px;
+    background-color: #B88E33;
+    background-image: linear-gradient(90deg, transparent 50%, rgb(255, 255, 255) 50%);
+    background-size: 7px 7px;
+    z-index: 1;
+  }
+
+  .container.right::before {
+    left: 3px;
+  }
+  /* icons for bullet points */
+  .container .icon {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #B88E33;
+    border-radius: 10px;
+    top: calc(50% - 5px);
+    text-align: center;
+    z-index: 1;
+  }
+
+  .container.left .icon {
+    right: 24px;
+  }
+
+  .container.right .icon {
+    left: 24px;
+  }
+
+  .container .content {
+    padding: 30px 90px 30px 30px;
+    background: #F7F7F8;
+    position: relative;
+    border-radius: 5px;
+  }
+
+  .container.right .content {
+    padding: 30px 30px 30px 90px;
+    border-radius: 5px;
+  }
+
+  .container .content h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .container .content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+  }
+  /* screen widths for each time the heights of the dashed lines needed to be adjusted, as well as resizing the images in the black banner */
+  @media screen and (max-width: 1566px) {
+    .banner {
+      height: 500px;
+    }
+    .banner-icon {
+      left: 25%;
+    }
+    .banner-icon img {
+      width: 256px;
+      height: auto;
+    }
+  
+    .banner-community img {
+      width: 317px;
+      height: auto;
+    }
+  
+    .banner-4 {
+      border-radius: 75px;
+      height: 75px;
+      width: 75px;
+      font-size: 45px;
+    }
+    .banner-4::before {
+      left: 75px;
+    }
+  }
+
+  @media screen and (max-width: 990px) {
+    .banner-icon {
+      left: 15%;
+    }
+    .banner-icon img {
+      width: 256px;
+      height: auto;
+    }
+  
+    .banner-community img {
+      width: 317px;
+      height: auto;
+    }
+  
+    .banner-4 {
+      border-radius: 75px;
+      height: 75px;
+      width: 75px;
+      font-size: 45px;
+    }
+    .banner-4::before {
+      left: 75px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .banner {
+      height: 300px;
+    }
+    .banner-icon {
+      left: 5%;
+    }
+    .banner-icon img {
+      width: 211px;
+      height: auto;
+    }
+  
+    .banner-community img {
+      width: 171px;
+      height: auto;
+    }
+  
+    .banner-4 {
+      border-radius: 60px;
+      height: 60px;
+      width: 60px;
+      font-size: 25px;
+      margin: 0px;
+    }
+    .banner-4::before {
+      left: 60px;
+    }
+
+    .bullets::after {
+      left: 50px;
+      top: 110px;
+      bottom: 110px;
+    }
+
+    .container {
+      width: 100%;
+      padding-left: 120px;
+      padding-right: 30px;
+    }
+
+    .container.right {
+      left: 0%;
+    }
+
+    .container.left::after, 
+    .container.right::after {
+      left: 82px;
+    }
+
+    .container.left::before,
+    .container.right::before {
+      left: 49px;
+      border-color: transparent #B88E33 transparent transparent;
+    }
+
+    .container.left .date,
+    .container.right .date {
+      right: auto;
+      left: 15px;
+    }
+
+    .container.left .icon,
+    .container.right .icon {
+      right: auto;
+      left: 81px;
+    }
+
+    .container.left .content,
+    .container.right .content {
+      padding: 30px 30px 30px 90px;
+    }
+  }
+
+  @media (max-width: 604.98px) {
+    .bullets::after {
+      top: 120px;
+      bottom: 130px;
+    }
+  }
+
+  @media (max-width: 559.98px) {
+    .bullets::after {
+      top: 130px;
+      bottom: 140px;
+    }
+  }
+
+  @media (max-width: 533.98px) {
+    .bullets::after {
+      top: 140px;
+      bottom: 145px;
+    }
+  }
+
+  @media (max-width: 505.98px) {
+    .bullets::after {
+      top: 140px;
+      bottom: 155px;
+    }
+  }
